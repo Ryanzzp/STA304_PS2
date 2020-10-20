@@ -16,9 +16,11 @@ select_data <- raw_data[c(2, 5, 11, 12, 21, 28, 41, 42, 44, 47, 48)]
 # library("dplyr")
 str(select_data)
 
+# Remove all NA obs
 new_data <- na.omit(select_data)
 str(new_data)
 
+# Convert categorical to Numerical
 new_data[new_data == "Don't know"] <- "0"
 new_data[new_data == "Not at all important"] <- "1"
 new_data[new_data == "Somewhat important"] <- "2"
